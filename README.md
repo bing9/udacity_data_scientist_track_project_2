@@ -1,11 +1,24 @@
 # udacity_data_scientist_track_project_2
 NLP Natural Disaster Messaging Analysis
 
+## Backgrounds
+When natural disaster happens, we would see millions of twitter messages regarding all sorts of topics around the disaster. There are import information that may help to save lives faster. Thus this web app developed to use machine learning to categorize twitter messages into multiple topics so that we could analyze in each category what is the most relevant information.
+
+Project is from Udacity Data Scientist track.
+
+## Results
+In the web app we have included interactive link and several basic information:
+* A message classifier on top to classify the twitter message based on the model we trained in the historical data. It can output one ore more of the 36 categories of the message.
+
+* Web app graph 1: Interactive classifier and message genre overview ![Overview of genre](/Pictures/overview_of_genres.png)
+* Web app graph 2: Pareto chart of most twitted topics ![Count of Topics ](/Pictures/count_of_topics.png)
+* Web app graph 3: Area chart of message that having touched most topics ![Count of Topics ](/Pictures/messages_cover_most_topics.png)
+
 ## Project Components
-There are three components you'll need to complete for this project.
+There are three components included in this project.
 
 1. ETL Pipeline
-In a Python script, process_data.py, write a data cleaning pipeline that:
+In a Python script, process_data.py, we have written a data cleaning pipeline that:
 
 * Loads the messages and categories datasets
 * Merges the two datasets
@@ -13,7 +26,7 @@ In a Python script, process_data.py, write a data cleaning pipeline that:
 * Stores it in a SQLite database
 
 2. ML Pipeline
-In a Python script, train_classifier.py, write a machine learning pipeline that:
+In a Python script, train_classifier.py, we have writtten a machine learning pipeline that:
 
 * Loads data from the SQLite database
 * Splits the dataset into training and test sets
@@ -23,17 +36,12 @@ In a Python script, train_classifier.py, write a machine learning pipeline that:
 * Exports the final model as a pickle file
 
 3. Flask Web App
-We are providing much of the flask web app for you, but feel free to add extra features depending on your knowledge of flask, html, css and javascript. For this part, you'll need to:
+Web app that having files to display results:
 
 * Modify file paths for database and model as needed
 * Add data visualizations using Plotly in the web app. One example is provided for you
 * Github and Code Quality
 
-Your project will also be graded based on the following:
-
-* Use of Git and Github
-* Strong documentation
-* Clean and modular code
 
 Code to run
 ```
