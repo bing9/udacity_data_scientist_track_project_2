@@ -21,6 +21,8 @@ from sklearn.feature_extraction.text import CountVectorizer, TfidfTransformer
 from sklearn.multioutput import MultiOutputClassifier
 from sklearn.metrics import classification_report
 
+import pickle
+
 def load_data(database_filepath):
     """Load data from database file
     Input: database filepath
@@ -76,8 +78,8 @@ def build_model():
     ])
 
     parameters = {
-        'vect__ngram_range': ((1, 1), (1, 2)),
-        'vect__max_df': (0.5, 0.75, 1.0),
+        'vect__ngram_range': ((1, 1), (1, 2)), #
+        'vect__max_df': (0.5, 0.75),  # ,  1.0
         'vect__max_features': (None, 5000),
         'tfidf__use_idf': (True, False)
     }
@@ -91,7 +93,7 @@ def evaluate_model(model, X_test, Y_test, category_names):
     y_pred = model.predict(X_test)
     reports = []
     for i in range(36):
-        reports.append(classification_report(Y_test.values[:, i], y_pred[:, i], target_names=Y.columns))
+        reports.append(classification_report(Y_test.values[:, i], y_pred[:, i], target_names=category_names))
     return reports
 
 
